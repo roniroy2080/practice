@@ -7,7 +7,6 @@ import { GiSwapBag } from "react-icons/gi";
 import { RiLockPasswordFill, RiLuggageDepositFill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 import { CiCreditCard1 } from "react-icons/ci";
-import { Menu } from "@headlessui/react";
 const Layout = ({ children }) => {
   let path = usePathname();
   return (
@@ -46,14 +45,14 @@ const Layout = ({ children }) => {
                 </span>
               </div>
               <div className="flex items-center">
-                <Menu>
+                
                 <div className="flex items-center ms-3">
                   <div>
-                    <Menu.Button
-                      // type="button"
-                      // className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                      // aria-expanded="false"
-                      // data-dropdown-toggle="dropdown-user"
+                    <button
+                      type="button"
+                      className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                      aria-expanded="false"
+                      data-dropdown-toggle="dropdown-user"
                     >
                       <span className="sr-only">Open user menu</span>
                       <img
@@ -61,12 +60,11 @@ const Layout = ({ children }) => {
                         src="https://media.istockphoto.com/vectors/user-vector-id1138452882?k=20&m=1138452882&s=170667a&w=0&h=VPcCtAjIcXjS88hse2EL6bD_YLOYzh2V8fDdNCfOiB4="
                         alt="user photo"
                       />
-                    </Menu.Button>
+                    </button>
                   </div>
-                  <Menu.Items>
                   <div
-                    className="z-50 my-4 absolute right-[2.5rem] top-5 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
-                    // id="dropdown-user"
+                    className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                    id="dropdown-user"
                   >
                     <ul className="py-1" role="none">
                       <li>
@@ -107,9 +105,7 @@ const Layout = ({ children }) => {
                       </li>
                     </ul>
                   </div>
-                  </Menu.Items>
                 </div>
-                </Menu>
               </div>
             </div>
           </div>
