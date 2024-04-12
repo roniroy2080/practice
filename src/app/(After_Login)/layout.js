@@ -7,8 +7,9 @@ import { GiSwapBag } from "react-icons/gi";
 import { RiLockPasswordFill, RiLuggageDepositFill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 import { CiCreditCard1 } from "react-icons/ci";
+import { Menu } from "@headlessui/react";
 const Layout = ({ children }) => {
-  let path = usePathname()
+  let path = usePathname();
   return (
     <>
       <>
@@ -38,25 +39,21 @@ const Layout = ({ children }) => {
                     />
                   </svg>
                 </button>
-                <a href="https://flowbite.com" className="flex ms-2 md:me-24">
-                  <img
-                    src="https://flowbite.com/docs/images/logo.svg"
-                    className="h-8 me-3"
-                    alt="FlowBite Logo"
-                  />
+                <span className="flex ms-2 md:me-24">
                   <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                    Flowbite
+                    TechnoByte
                   </span>
-                </a>
+                </span>
               </div>
               <div className="flex items-center">
+                <Menu>
                 <div className="flex items-center ms-3">
                   <div>
-                    <button
-                      type="button"
-                      className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                      aria-expanded="false"
-                      data-dropdown-toggle="dropdown-user"
+                    <Menu.Button
+                      // type="button"
+                      // className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                      // aria-expanded="false"
+                      // data-dropdown-toggle="dropdown-user"
                     >
                       <span className="sr-only">Open user menu</span>
                       <img
@@ -64,32 +61,26 @@ const Layout = ({ children }) => {
                         src="https://media.istockphoto.com/vectors/user-vector-id1138452882?k=20&m=1138452882&s=170667a&w=0&h=VPcCtAjIcXjS88hse2EL6bD_YLOYzh2V8fDdNCfOiB4="
                         alt="user photo"
                       />
-                    </button>
+                    </Menu.Button>
                   </div>
+                  <Menu.Items>
                   <div
-                    className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
-                    id="dropdown-user"
+                    className="z-50 my-4 absolute right-[2.5rem] top-5 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                    // id="dropdown-user"
                   >
-                    <div className="px-4 py-3" role="none">
-                      <p
-                        className="text-sm text-gray-900 dark:text-white"
-                        role="none"
-                      >
-                        Neil Sims
-                      </p>
-                      <p
-                        className="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
-                        role="none"
-                      >
-                        neil.sims@flowbite.com
-                      </p>
-                    </div>
                     <ul className="py-1" role="none">
                       <li>
                         <a
                           href="#"
-                          data-modal-target="authentication-modal"
-                          data-modal-toggle="authentication-modal"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                          role="menuitem"
+                        >
+                          Profile
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                           role="menuitem"
                         >
@@ -116,7 +107,9 @@ const Layout = ({ children }) => {
                       </li>
                     </ul>
                   </div>
+                  </Menu.Items>
                 </div>
+                </Menu>
               </div>
             </div>
           </div>
